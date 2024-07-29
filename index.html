@@ -1,31 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monitoramento do rio</title>
+    <title>MonitoraUna</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
     <header>
         <nav>
             <ul class="header-nav">
                 <li class="logo">Menu</li>
                 <div class="nav-items">
-                    <li class="nav-item"><a href="#">Inicio</a></li>
-                    <li class="nav-item"><a href="#">Noticias</a></li>
-                    <li class="nav-item"><a href="#">Denuncia</a></li>
-                    <li class="nav-item"><a href="#">Parcerias</a></li>
-                    <li class="nav-item"><a href="#">Membros</a></li>
+                    <li class="nav-item"><a href="#home">Início</a></li>
+                    <li class="nav-item"><a href="#about">Sobre</a></li>
+                    <li class="nav-item"><a href="#services">Serviços</a></li>
+                    <li class="nav-item"><a href="#contact">Contato</a></li>
                 </div>
             </ul>
         </nav>
     </header>
+    <main>
+        <section class="conteudo">
+            <div class="grafico">
+                <h2>Gráfico de Análise do Rio</h2>
+                <canvas id="meuGrafico"></canvas>
+            </div>
+
+            <div class="informacoes">
+                <h3>Informações sobre Chuvas</h3>
+                <p>O monitoramento de água é uma atitude que visa evitar danos ambientais e promover sustentabilidade e segurança operacional. Devido a importância da água para a vida humana, esse tipo de monitoramento tem se tornado cada vez mais necessário.
+                Quando falamos em um sistema de monitoramento de água a primeira coisa que vem à mente é o monitoramento de poços, né? Mas a tecnologia não se restringe a isso, é possível também monitorar reservatórios, rios, represas, estações de tratamento, captações superficiais, água de reuso para irrigação, enfim, inúmeras situações que envolvem o uso de água.
+                As chuvas intensas podem elevar rapidamente o nível do rio, causando enchentes. É importante monitorar regularmente os dados.</p>
+                <h3>Nível Perigoso do Rio</h3>
+                <div class="alerta">
+                    <img src="https://via.placeholder.com/150" alt="Imagem de Alerta">
+                    <p><strong>Perigoso:</strong> Quando o nível do rio ultrapassa 5 metros, há risco de enchentes.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Site Temático de Rio. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('meuGrafico').getContext('2d');
+        const meuGrafico = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+                datasets: [{
+                    label: 'Nível do Rio',
+                    data: [3, 2, 1, 5, 6, 4],
+                    borderColor: 'rgba(0, 150, 136, 1)',
+                    backgroundColor: 'rgba(0, 150, 136, 0.5)',
+                    fill: true,
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
-
-<style>
-
-</style>
 </html>
