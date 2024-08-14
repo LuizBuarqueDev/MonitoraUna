@@ -50,29 +50,32 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        const ctx = document.getElementById('meuGrafico').getContext('2d');
-        const meuGrafico = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
-                datasets: [{
-                    label: 'Nível do Rio',
-                    data: [3, 2, 1, 5, 6, 4],
-                    borderColor: 'rgba(0, 150, 136, 1)',
-                    backgroundColor: 'rgba(0, 150, 136, 0.5)',
-                    fill: true,
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+        async function createChart() {
+            const response = await fetch('https://www.random.org/integers/?num=12&min=0&max=10&col=1&base=10&format=plain&rnd=new');
+            const data = (await response.text()).trim().split("\n").map(Number);
+    
+            new Chart(document.getElementById('meuGrafico').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: data.map((_, i) => `Data ${i + 1}`),
+                    datasets: [{
+                        label: 'Nível do Rio',
+                        data: data,
+                        borderColor: 'rgba(0, 150, 136, 1)',
+                        backgroundColor: 'rgba(0, 150, 136, 0.5)',
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: { y: { beginAtZero: true, max: 10 } }
                 }
-            }
-        });
+            });
+        }
+    
+        createChart();
     </script>
+    
 </body>
 
 <style>
