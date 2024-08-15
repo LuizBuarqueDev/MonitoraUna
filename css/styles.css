@@ -52,8 +52,7 @@ header {
 }
 
 .nav-item a:hover {
-    text-decoration: underline;
-    color: #7bdd0b;
+    color: #4aeedb;
 }
 
 footer {
