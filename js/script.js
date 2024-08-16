@@ -18,8 +18,36 @@ document.getElementById('formulario').addEventListener('submit', async (event) =
         });
 
         document.getElementById('formulario').reset();
+
+        buscarComentarios();
     } catch (error){
         console.log(error);
     }
-        
 });
+
+async function buscarComentarios(){
+    try{
+        const response = await fetch(url,{
+            headers: {
+                'apikey': key
+            }
+        });
+
+        const comentarios = await response.json();
+        const listaComentarios = document.getElementById('lista-comentarios');
+
+        listaComentarios.innerHTML = '';
+
+        comentarios.forEach(comentario =>{
+            const item = document.createElement('div');
+            item.className = 'item-comentario';
+            item.innerHTML = `<strong>${comentario.nome}</strong>: <p>${comentario.comentario}</p>
+            `;
+            listaComentarios.appendChild(item);
+        });
+    }catch(error){
+        console.log(error);
+    }
+}
+
+buscarComentarios();
