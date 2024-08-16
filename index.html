@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="shortcut icon" href="img/Logo.ico">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <header>
         <div class="logo_cebecalho">
@@ -18,6 +20,7 @@
                     <li class="nav-item"><a href="index.html">Início</a></li>
                     <li class="nav-item"><a href="pages/contato.html">Contato</a></li>
                     <li class="nav-item"><a href="pages/sobre.html">Sobre</a></li>
+                    <li class="nav-item"><a href="pages/comentarios.html">Comentarios</a></li>
                 </div>
             </ul>
         </nav>
@@ -31,9 +34,15 @@
             <div class="informacoes">
                 <br>
                 <h3>Informações sobre Chuvas</h3>
-                <p> O monitoramento de água é uma atitude que visa evitar danos ambientais e promover sustentabilidade e segurança operacional. Devido a importância da água para a vida humana, esse tipo de monitoramento tem se tornado cada vez mais necessário.
-                Quando falamos em um sistema de monitoramento de água a primeira coisa que vem à mente é o monitoramento de poços, né? Mas a tecnologia não se restringe a isso, é possível também monitorar reservatórios, rios, represas, estações de tratamento, captações superficiais, água de reuso para irrigação, enfim, inúmeras situações que envolvem o uso de água.
-                As chuvas intensas podem elevar rapidamente o nível do rio, causando enchentes. É importante monitorar regularmente os dados.</p>
+                <p> O monitoramento de água é uma atitude que visa evitar danos ambientais e promover sustentabilidade e
+                    segurança operacional. Devido a importância da água para a vida humana, esse tipo de monitoramento
+                    tem se tornado cada vez mais necessário.
+                    Quando falamos em um sistema de monitoramento de água a primeira coisa que vem à mente é o
+                    monitoramento de poços, né? Mas a tecnologia não se restringe a isso, é possível também monitorar
+                    reservatórios, rios, represas, estações de tratamento, captações superficiais, água de reuso para
+                    irrigação, enfim, inúmeras situações que envolvem o uso de água.
+                    As chuvas intensas podem elevar rapidamente o nível do rio, causando enchentes. É importante
+                    monitorar regularmente os dados.</p>
                 <br>
                 <h3>Nível Perigoso do Rio</h3>
                 <div class="alerta">
@@ -53,7 +62,7 @@
         async function createChart() {
             const response = await fetch('https://www.random.org/integers/?num=12&min=0&max=10&col=1&base=10&format=plain&rnd=new');
             const data = (await response.text()).trim().split("\n").map(Number);
-    
+
             new Chart(document.getElementById('meuGrafico').getContext('2d'), {
                 type: 'line',
                 data: {
@@ -72,47 +81,48 @@
                 }
             });
         }
-    
+
         createChart();
     </script>
-    
+
 </body>
 
 <style>
     main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-}
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+    }
 
-.grafico,
-.informacoes {
-    width: 100%;
-    max-width: 800px;
-    margin: 30px 0;
-    text-align: justify;
-}
+    .grafico,
+    .informacoes {
+        width: 100%;
+        max-width: 800px;
+        margin: 30px 0;
+        text-align: justify;
+    }
 
-#grafico {
-    max-width: 600px;
-    margin: 0 auto;
-}
+    #grafico {
+        max-width: 600px;
+        margin: 0 auto;
+    }
 
-.alerta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-}
+    .alerta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
 
-.alerta img {
-    width: 600px;
-    height: auto;
-    margin-right: 20px;
-}
+    .alerta img {
+        width: 600px;
+        height: auto;
+        margin-right: 20px;
+    }
 </style>
+
 </html>
