@@ -12,7 +12,6 @@ document.getElementById('formulario').addEventListener('submit', async (event) =
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${key}`,
                 'apikey': key
             },
             body: JSON.stringify({ nome, comentario })
