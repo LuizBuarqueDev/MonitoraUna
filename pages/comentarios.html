@@ -18,40 +18,46 @@
             <ul class="header-nav">
                 <div class="nav-items">
                     <li class="nav-item"><a href="../index.html">Início</a></li>
-                    <li class="nav-item"><a href="#contact">Contato</a></li>
+                    <li class="nav-item"><a href="contato.html">Contato</a></li>
                     <li class="nav-item"><a href="sobre.html">Sobre</a></li>
-                    <li class="nav-item"><a href="#comentarios">Comentarios</a></li>
+                    <li class="nav-item"><a href="#comentarios">Comentários</a></li>
                 </div>
             </ul>
         </nav>
     </header>
+
     <main>
         <h1>Comentários</h1>
-        <div id="lista-comentarios" class="lista-comentarios">
-            
-        </div>
+        <div id="lista-comentarios" class="lista-comentarios"></div>
 
         <h2>Adicione um comentário!</h2>
         <form id="formulario">
             <label for="nome">Nome: </label>
             <input type="text" id="nome" name="nome" required>
-            <br>
+
             <label for="comentario">Comentário: </label>
             <textarea id="comentario" name="comentario" required></textarea>
-            <br>
+
             <button type="submit">Enviar</button>
         </form>
     </main>
-    <div>
-        <br>
-    </div>
+
     <footer>
         <p>&copy; 2024 MonitoraUna. Todos os direitos reservados.</p>
     </footer>
+
     <script src="../js/script.js"></script>
 </body>
 
 <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
     main {
         flex: 1;
         display: flex;
@@ -62,30 +68,49 @@
         padding: 20px;
     }
 
-    .grafico,
-    .informacoes {
+    #lista-comentarios {
         width: 100%;
-        max-width: 800px;
-        margin: 30px 0;
-        text-align: justify;
-    }
-
-    #grafico {
         max-width: 600px;
-        margin: 0 auto;
+        margin: 20px 0;
+        text-align: left;
     }
 
-    .alerta {
+    form {
+        width: 100%;
+        max-width: 600px;
+        margin: 20px 0;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
+        flex-direction: column;
+        gap: 15px;
     }
 
-    .alerta img {
-        width: 600px;
-        height: auto;
-        margin-right: 20px;
+    label {
+        text-align: left;
+        font-weight: bold;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #00796b;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #4aeedb;
     }
 </style>
 
