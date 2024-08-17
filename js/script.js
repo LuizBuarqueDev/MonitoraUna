@@ -36,6 +36,8 @@ async function buscarComentarios(){
         const comentarios = await response.json();
         const listaComentarios = document.getElementById('lista-comentarios');
 
+        comentarios.sort((a, b) => b.id - a.id);
+
         listaComentarios.innerHTML = '';
 
         comentarios.forEach(comentario =>{
