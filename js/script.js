@@ -43,8 +43,7 @@ async function buscarComentarios(){
         comentarios.forEach(comentario =>{
             const item = document.createElement('div');
             item.className = 'item-comentario';
-            item.innerHTML = `<strong>${comentario.nome}</strong>:<p>${comentario.comentario}</p>
-            `;
+            item.innerHTML = `<strong class="nome-comentario">${comentario.nome}:</strong><p>${comentario.comentario}</p>`;
             listaComentarios.appendChild(item);
         });
     }catch(error){
